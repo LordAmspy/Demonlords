@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GALLERY</title>
+    <style>
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.thumbnail {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .2s ease;
+}
+
+.thumbnail:hover img {
+  transform: scale(1.1);
+}
+
+    </style>
+  </head>
+  <body>
+    <h1>Dread The Demonlords</h1>
+    <div class="gallery">
+      <div class="thumbnail">
+        <img src="https://wallpapercave.com/wp/wp11089306.jpg">
+      </div>
+      <div class="thumbnail">
+        <img src="img2.jpg">
+      </div>
+      <div class="thumbnail">
+        <img src="img3.jpg">
+      </div>
+      <div class="thumbnail">
+        <img src="img4.jpg">
+      </div>
+    </div>
+    
+    <script>
+// Get all thumbnail elements
+const thumbnails = document.querySelectorAll(".thumbnail");
+
+// Loop through each thumbnail and add a click event listener
+thumbnails.forEach(thumbnail => {
+  thumbnail.addEventListener("click", () => {
+    // Get the source of the clicked image
+    const src = thumbnail.querySelector("img").getAttribute("src");
+
+    // Create a modal element
+    const modal = document.createElement("div");
+    modal.classList.add("modal");
+
+    // Create an image element inside the modal
+    const modalImg = document.createElement("img");
+    modalImg.setAttribute("src", src);
+    modal.appendChild(modalImg);
+
+    // Add the modal to the page
+    document.body.appendChild(modal);
+
+    // Add a click event listener to the modal to close it
+    modal.addEventListener("click", () => {
+      document.body.removeChild(modal);
+    });
+  });
+});
+
+    </script>
+  </body>
+</html>

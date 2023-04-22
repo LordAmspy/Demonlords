@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Netflix Clone</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
+<style>
+  /* Reset Styles */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Global Styles */
+  body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff;
+    background-color: #141414;
+  }
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  h1, h2 {
+    margin-bottom: 10px;
+  }
+  
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 20px;
+    background-image: url('https://cdn.pixabay.com/photo/2015/03/26/09/47/skyline-690904_960_720.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 30px;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  nav li {
+    margin-right: 30px;
+  }
+  
+  .search {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+  }
+  
+  .search input[type="text"] {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-size: 16px;
+    padding: 5px;
+    margin-right: 10px;
+  }
+  
+  .search button[type="submit"] {
+    background-color: #e50914;
+    border: none;
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .account a {
+    background-color: #e50914;
+    border-radius: 3px;
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .hero {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 200px;
+    padding-bottom: 100px;
+  }
+  
+  .hero h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .hero h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .hero form {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .hero input[type="email"] {
+    background-color: #fff;
+    border: none;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    color: #000;
+    font-size: 16px;
+    padding: 5px;
+    width: 300px;
+  }
+  
+  .hero button[type="submit"] {
+    background-color: #e50914;
+    border: none;
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 16px;
+  }
+    .genres {
+  padding: 50px;
+  background-color: #fff;
+}
+
+section img:hover{
+  scale: 1.2;
+}
+
+.genres h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.genre-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.genre-card {
+  width: calc(20% - 20px);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.genre-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.genre-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.suggested-videos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.suggested-video {
+  width: 30%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.suggested-video-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.suggested-video-title {
+  font-size: 1.2rem;
+  margin: 10px;
+}
+
+
+    </style>
+
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="logo">
+          <img src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" alt="Netflix Logo">
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">TV Shows</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">New &amp; Popular</a></li>
+            <li><a href="#">My List</a></li>
+          </ul>
+        </nav>
+        <div class="search">
+          <input type="text" placeholder="Search">
+          <button type="submit">Search</button>
+        </div>
+        <div class="account">
+          <a href="#">Sign In</a>
+        </div>
+      </div>
+      <div class="hero">
+        <h1>Unlimited movies, TV shows, and more.</h1>
+        <h2>Watch anywhere. Cancel anytime.</h2>
+        <form>
+          <input type="email" placeholder="Email address">
+          <button type="submit">Try 30 Days Free</button>
+        </form>
+        <p>Ready to watch? Enter your email to create or restart your membership.</p>
+      </div>
+    </header>
+    <section class="genres">
+        <h2>Genres</h2>
+        <div class="genre-cards">
+          <div class="genre-card">
+            <img src="https://cdn.pixabay.com/photo/2017/08/10/08/08/movie-2619211_960_720.jpg" alt="Action" class="genre-image">
+            <h3 class="genre-title">Action</h3>
+            <div class="suggested-videos">
+              <div class="suggested-video">
+                <img src="https://cdn.pixabay.com/photo/2018/06/25/18/47/iron-man-3495410_960_720.jpg" alt="Iron Man" class="suggested-video-image">
+                <h4 class="suggested-video-title">Iron Man</h4>
+              </div>
+              <div class="suggested-video">
+                <img src="https://cdn.pixabay.com/photo/2016/11/09/23/54/avengers-1818687_960_720.jpg" alt="Avengers" class="suggested-video-image">
+                <h4 class="suggested-video-title">Avengers</h4>
+              </div>
+              <div class="suggested-video">
+                <img src="https://cdn.pixabay.com/photo/2018/06/26/02/35/thor-3496232_960_720.jpg" alt="Thor" class="suggested-video-image">
+                <h4 class="suggested-video-title">Thor</h4>
+              </div>
+            </div>
+          </div>
+          <div class="genre-card">
+            <img src="https://cdn.pixabay.com/photo/2018/01/21/00/41/fantasy-3094738_960_720.jpg" alt="Fantasy" class="genre-image">
+            <h3 class="genre-title">Fantasy</h3>
+            <div class="suggested-videos">
+              <div class="suggested-video">
+                <img src="https://cdn.pixabay.com/photo/2015/09/15/17/25/the-hobbit-941930_960_720.jpg" alt="The Hobbit" class="suggested-video-image">
+                <h4 class="suggested-video-title">The Hobbit</h4>
+              </div>
+              <div class="suggested-video">
+                <img src="https://cdn.pixabay.com/photo/2015/09/15/17/25/the-lord-of-the-rings-941933_960_720.jpg" alt="The Lord of the Rings" class="suggested-video-image">
+                <h4 class="suggested-video-title">The Lord of the Rings</h4>
+              </div>
+              <div class="suggested-video">
+                <img src="https://cdn.pixabay.com/photo/2014/09/11/19/05/castle-443683_960_720.jpg" alt="Game of Thrones" class="suggested-video-image">
+                <h4 class="suggested-video-title">Game of Thrones</h4>
+              </div>
+            </div>
+          </div>
+          <div class="genre-card">
+            <img src="https://cdn.pixabay.com/photo/2016/12/28/14/31/woman-1931353_960_720.jpg" alt="Romance" class="genre-image">
+            <h3 class="genre-title">Romance</h3>
+            <div class="suggested-videos">
+      </section>
+    <main>
+      <section class="featured">
+        <h2>Featured</h2>
+        <!-- Add featured movies and TV shows here -->
+      </section>
+      <section class="trending">
+        <h2>Trending Now</h2>
+        <!-- Add trending movies and TV shows here -->
+      </section>
+      <section class="my-list">
+        <h2>My List</h2>
+        <!-- Add movies and TV shows to your list here -->
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 Netflix Clone</p>
+    </footer>
+  </body>
+</html>
+
